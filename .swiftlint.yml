@@ -1,0 +1,73 @@
+
+# .swiftlint.yml
+
+# Rules that you want to disable
+disabled_rules:
+  - force_cast # Disables force casting (as!).
+  - force_unwrapping # Disables force unwrapping (!).
+  - line_length # Disables the rule for long lines.
+  - trailing_whitespace # Disables trailing whitespace rule.
+  - file_length # Disables the file length limit.
+  - todo # Disables TODO/FIXME comment warnings.
+
+# Opt-in rules that are disabled by default
+opt_in_rules:
+  - closure_end_indentation # Ensures closure end braces are aligned.
+  - closure_spacing # Enforces spacing in closure declarations.
+  - cyclomatic_complexity # Enforces limits on function complexity.
+  - function_body_length # Enforces limits on function body length.
+  - identifier_name # Enforces naming conventions.
+  - vertical_parameter_alignment # Enforces parameter alignment.
+  - missing_docs # Enforces documentation comments.
+  - discouraged_optional_boolean # Discourages the use of `Bool?`.
+
+# General thresholds for certain rules
+cyclomatic_complexity:
+  severity: warning
+  max_complexity: 10
+
+function_body_length:
+  warning: 40
+  error: 75
+
+line_length:
+  warning: 120
+  error: 200
+
+type_body_length:
+  warning: 200
+  error: 400
+
+file_length:
+  warning: 400
+  error: 1000
+
+identifier_name:
+  min_length:
+    warning: 3
+    error: 2
+  max_length:
+    warning: 40
+    error: 60
+
+# Excluding directories or files from linting
+excluded:
+  - Pods
+  - Carthage
+  - Generated
+
+# Additional rules to enforce
+custom_rules:
+  no_tabs: # Disallow tabs in code
+    regex: '\t+'
+    message: "Don't use tabs for indentation."
+    severity: error
+  no_print_statements: # Disallow print statements in production code
+    regex: 'print\('
+    message: "Avoid using print statements."
+    severity: warning
+
+# Directories to include for linting
+included:
+  - Sources
+  - Tests

@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		72A55BD22DB12B4200D39FEA /* EventHorizon in Frameworks */ = {isa = PBXBuildFile; productRef = 72A55BD12DB12B4200D39FEA /* EventHorizon */; };
+		72A55D2B2DB1319100D39FEA /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 72A55D2A2DB1319100D39FEA /* .swiftlint.yml */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		72A55B772DB1242100D39FEA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -27,11 +32,25 @@
 		72A55B642DB1241E00D39FEA /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A55B762DB1242100D39FEA /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A55B802DB1242100D39FEA /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		72A55D2A2DB1319100D39FEA /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		72A55CC42DB12DD000D39FEA /* Exceptions for "WeatherApp" folder in "WeatherApp" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 72A55B632DB1241E00D39FEA /* WeatherApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		72A55B662DB1241E00D39FEA /* WeatherApp */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				72A55CC42DB12DD000D39FEA /* Exceptions for "WeatherApp" folder in "WeatherApp" target */,
+			);
 			path = WeatherApp;
 			sourceTree = "<group>";
 		};
@@ -52,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A55BD22DB12B4200D39FEA /* EventHorizon in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +95,7 @@
 		72A55B5B2DB1241E00D39FEA = {
 			isa = PBXGroup;
 			children = (
+				72A55D2A2DB1319100D39FEA /* .swiftlint.yml */,
 				72A55B662DB1241E00D39FEA /* WeatherApp */,
 				72A55B792DB1242100D39FEA /* WeatherAppTests */,
 				72A55B832DB1242100D39FEA /* WeatherAppUITests */,
@@ -102,6 +123,7 @@
 				72A55B602DB1241E00D39FEA /* Sources */,
 				72A55B612DB1241E00D39FEA /* Frameworks */,
 				72A55B622DB1241E00D39FEA /* Resources */,
+				72A55DB92DB1331600D39FEA /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -112,6 +134,7 @@
 			);
 			name = WeatherApp;
 			packageProductDependencies = (
+				72A55BD12DB12B4200D39FEA /* EventHorizon */,
 			);
 			productName = WeatherApp;
 			productReference = 72A55B642DB1241E00D39FEA /* WeatherApp.app */;
@@ -195,6 +218,9 @@
 			);
 			mainGroup = 72A55B5B2DB1241E00D39FEA;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				72A55BD02DB12B4200D39FEA /* XCRemoteSwiftPackageReference "EventHorizon" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 72A55B652DB1241E00D39FEA /* Products */;
 			projectDirPath = "";
@@ -212,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72A55D2B2DB1319100D39FEA /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +257,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		72A55DB92DB1331600D39FEA /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 12;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]\nthen\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif command -v swiftlint >/dev/null 2>&1\nthen\n    swiftlint\nelse\n    echo \"warning: `swiftlint` command not found - See https://github.com/realm/SwiftLint#installation for installation instructions.\"\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72A55B602DB1241E00D39FEA /* Sources */ = {
@@ -400,6 +450,7 @@
 				DEVELOPMENT_TEAM = 4KP7P7XSCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -428,6 +479,7 @@
 				DEVELOPMENT_TEAM = 4KP7P7XSCQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WeatherApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -558,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		72A55BD02DB12B4200D39FEA /* XCRemoteSwiftPackageReference "EventHorizon" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/egzonpllana/EventHorizon.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		72A55BD12DB12B4200D39FEA /* EventHorizon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 72A55BD02DB12B4200D39FEA /* XCRemoteSwiftPackageReference "EventHorizon" */;
+			productName = EventHorizon;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72A55B5C2DB1241E00D39FEA /* Project object */;
 }
