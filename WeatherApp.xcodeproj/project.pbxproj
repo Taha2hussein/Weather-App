@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		724AD62A2DB2522F0041AB9F /* Documantation in Resources */ = {isa = PBXBuildFile; fileRef = 724AD6292DB2522F0041AB9F /* Documantation */; };
 		72A55BD22DB12B4200D39FEA /* EventHorizon in Frameworks */ = {isa = PBXBuildFile; productRef = 72A55BD12DB12B4200D39FEA /* EventHorizon */; };
 		72A55D2B2DB1319100D39FEA /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 72A55D2A2DB1319100D39FEA /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		724AD6292DB2522F0041AB9F /* Documantation */ = {isa = PBXFileReference; lastKnownFileType = text; path = Documantation; sourceTree = "<group>"; };
 		72A55B642DB1241E00D39FEA /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A55B762DB1242100D39FEA /* WeatherAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		72A55B802DB1242100D39FEA /* WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 		72A55B5B2DB1241E00D39FEA = {
 			isa = PBXGroup;
 			children = (
+				724AD6292DB2522F0041AB9F /* Documantation */,
 				72A55D2A2DB1319100D39FEA /* .swiftlint.yml */,
 				72A55B662DB1241E00D39FEA /* WeatherApp */,
 				72A55B792DB1242100D39FEA /* WeatherAppTests */,
@@ -238,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				724AD62A2DB2522F0041AB9F /* Documantation in Resources */,
 				72A55D2B2DB1319100D39FEA /* .swiftlint.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
