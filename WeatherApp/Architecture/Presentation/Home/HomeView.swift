@@ -69,8 +69,11 @@ struct HomeView: View {
                 )
                 router.presentSheet(view: AnyView(homeDetailsBody))
             },
-            onTrailingButtonTap: {}
+            onTrailingButtonTap: {
+                router.navigate(to: .showHistorical(ciy: city))
+            }
         )
+        
     }
 }
 

@@ -13,7 +13,6 @@ struct CustomListItem<T>: View {
     let titleProvider: (T) -> String
     let onTap: () -> Void
     let onTrailingButtonTap: (() -> Void)?
-
     var body: some View {
         Button(action: onTap) {
             VStack(spacing: 8) {

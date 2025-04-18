@@ -62,3 +62,32 @@ struct HeaderBar: View {
         .frame(width: UIScreen.screenWidth,height: 72,alignment: .trailing)
     }
 }
+
+struct HistoricalHeaderBar: View {
+    var title: String
+    var onPlusTapped: () -> Void
+    
+    var body: some View {
+        HStack {
+            Button(action: {
+                onPlusTapped()
+            }) {
+                ZStack {
+                    Image("Button_left")
+                    
+                    Text("<")
+                        .font(.system(size: 24, weight: .light))
+                        .foregroundColor(Color.alert)
+                        .padding(.bottom, 36)
+                        .padding(.trailing, 36)
+                }
+            }
+            
+            NavigationTitle(title: title)
+                .padding(.leading, 90)
+                        
+       
+        }
+        .frame(width: UIScreen.screenWidth,height: 72,alignment: .leading)
+    }
+}

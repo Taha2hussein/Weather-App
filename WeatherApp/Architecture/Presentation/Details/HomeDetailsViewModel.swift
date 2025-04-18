@@ -6,8 +6,6 @@
 //
 
 import SwiftUI
-
-
 @MainActor
 final class HomeDetailsViewModel: HomeDetailsViewModelProtocol {
     

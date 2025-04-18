@@ -1,32 +1,27 @@
 //
-//  HomeRouter.swift
+//  HistoricalRouter.swift
 //  WeatherApp
 //
-//  Created by Taha Hussein on 17/04/2025.
+//  Created by Taha Hussein on 18/04/2025.
 //
 
+import Foundation
 import SwiftUI
 import Combine
 
-enum HomeRouterEnum: Hashable {
-    case showHistorical(ciy: City)
-}
-
-protocol AnyRouter: ObservableObject {
-    func presentSheet(view: AnyView)
-    func dismissSheet()
+enum HistoricalRouterEnum: Hashable {
+    case showDetails(weather: WeatherResponseDTO)
 }
 
 // MARK: - HomeRouter
-class HomeRouter: NavigationRouter ,AnyRouter {
-    typealias RouteType = HomeRouterEnum
-
-    @Published var currentRoute: HomeRouterEnum?
+class HistoricalRouter: NavigationRouter,AnyRouter {
+    typealias RouteType = HistoricalRouterEnum
+    @Published var currentRoute: HistoricalRouterEnum?
     @Published var showSheet: Bool = false
     @Published var sheetContent: AnyView?
     @Published var shouldDismissSignup: Bool = false
 
-    func navigate(to destination: HomeRouterEnum) {
+    func navigate(to destination: HistoricalRouterEnum) {
         DispatchQueue.main.async {
             self.currentRoute = destination
         }
@@ -34,11 +29,8 @@ class HomeRouter: NavigationRouter ,AnyRouter {
 
     func goBack() {
         DispatchQueue.main.async {
-            if self.currentRoute != nil {
                 self.currentRoute = nil
-            } else {
-                self.shouldDismissSignup = true
-            }
+            
         }
     }
 
@@ -59,9 +51,8 @@ class HomeRouter: NavigationRouter ,AnyRouter {
     var destinationView: AnyView? {
         guard let route = currentRoute else { return nil }
         switch route {
-
-        case .showHistorical(ciy: let ciy):
-            return AnyView(HistoricalView(viewModel: HistoricalViewModel(weatherResponse: ciy), router: HistoricalRouter()))
+        case .showDetails(let weather):
+            return AnyView(EmptyView())
         }
     }
 }

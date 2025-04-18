@@ -8,9 +8,9 @@
 import SwiftUI
 import SwiftUI
 
-struct HomeDetailsView: View {
+struct HomeDetailsView<Router: AnyRouter>: View {
     @StateObject var viewModel: HomeDetailsViewModel
-    @ObservedObject var router: HomeRouter
+    @ObservedObject var router: Router
     
     var body: some View {
         ZStack {
@@ -58,18 +58,12 @@ struct HomeDetailsView: View {
                         Spacer()
                         
                         VStack(alignment: .trailing, spacing: 16) {
-                            
-                            if let firstWeatherInfo = viewModel.weatherInfoSet  {
+                            if let firstWeatherInfo = viewModel.weatherInfoSet {
                                 Text(firstWeatherInfo.weatherDesc ?? "")
-                                let temperature = firstWeatherInfo.temperature
-                                Text("\(Int(temperature))° C")
-                                let humidity = firstWeatherInfo.humidity
-                                Text("\(Int(humidity))%")
-                                let windSpeed = firstWeatherInfo.windSpeed
-                                Text("\(Int(windSpeed)) km/h")
-                                
+                                Text("\(Int(firstWeatherInfo.temperature))° C")
+                                Text("\(Int(firstWeatherInfo.humidity))%")
+                                Text("\(Int(firstWeatherInfo.windSpeed)) km/h")
                             }
-                            
                         }
                         .foregroundColor(.red)
                         .font(.headline)
@@ -87,7 +81,6 @@ struct HomeDetailsView: View {
                     Text("WEATHER INFORMATION FOR \(viewModel.weatherResponse.name ?? "") RECEIVED ON")
                         .font(.caption)
                         .foregroundColor(.gray)
-                    
                 }
                 .padding(.bottom)
             }
