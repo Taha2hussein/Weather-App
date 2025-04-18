@@ -9,8 +9,8 @@ import SwiftUI
 import Combine
 
 struct SearchBarView: View {
-    @Binding var searchText : String
-    var placeholder : String = "search"
+    @Binding var searchText: String
+    var placeholder: String = "search"
     var isNumber: Bool = false
     var showSideImage: Bool = true
     var showXImage: Bool = true
@@ -22,28 +22,27 @@ struct SearchBarView: View {
     
     var body: some View {
         HStack {
-            if showSideImage{
+            if showSideImage {
                 Image(systemName: "magnifyingglass").foregroundColor(Color.RERtext.disabled)
             }
-            VStack{
+            VStack {
                 if dynamicHieght {
-                    
                     if #available(iOS 16.0, *) {
                         TextField(placeholder, text: $searchText, axis: .vertical)
                             .foregroundColor(.RERtext.primary).font(.RERBody.regular)
                     } else {
                         // Fallback on earlier versions
                     }
-                }else{
+                } else {
                     TextField(placeholder, text: $searchText)
                         .foregroundColor(.RERtext.primary).font(.RERBody.regular)
                         .frame(height: 12)
                 }
             }
                 .overlay(
-                    HStack{
+                    HStack {
                     Spacer()
-                    Button{
+                    Button {
                         searchText = ""
                     }label: {
                         Image(systemName: "xmark.circle.fill")
@@ -53,7 +52,8 @@ struct SearchBarView: View {
                             .opacity(searchText.isEmpty ? 0.0 : 1.0)
                             .hidden(!showXImage)
                     }
-                    }  )
+                    }
+                )
                 .if(isNumber) { view in
                     view.onReceive(Just(searchText)) { newString in
                         let filtered = newString.filter { "0123456789".contains($0) }
@@ -69,8 +69,6 @@ struct SearchBarView: View {
                         onSubmit?()
                     }
                 }
-                
-            
         }
         .font(.RERBody.regular)
         .padding()
@@ -79,13 +77,11 @@ struct SearchBarView: View {
         .overlay(
             RoundedRectangle(cornerRadius: 15)
                 .stroke(Color.clear, lineWidth: 1)
-        ).onChange(of: searchText) { newValue in
+        ).onChange(of: searchText) { _ in
             if searchText.count > 0 && searchText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
                 searchText = ""
             }
         }
-//        .padding(.Spacing.xs)
-
     }
 }
 

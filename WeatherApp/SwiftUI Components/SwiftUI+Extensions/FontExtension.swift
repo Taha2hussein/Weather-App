@@ -8,8 +8,6 @@
 import Foundation
 import SwiftUI
 
-
-
 extension Font {
     static var scale: CGFloat = 1
     

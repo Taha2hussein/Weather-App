@@ -31,18 +31,18 @@ extension CGFloat {
     
     struct Spacing {
         static let none = SpacingPrimitives.zero
-        static let xs4_Space = SpacingPrimitives.quarter
-        static let xs3_Space = SpacingPrimitives.half
-        static let xs2_Space = SpacingPrimitives.one
-        static let xs_Space = SpacingPrimitives.two
-        static let s_Space = SpacingPrimitives.three
-        static let m_Space = SpacingPrimitives.four
-        static let l_Space = SpacingPrimitives.five
-        static let xl_Space = SpacingPrimitives.six
-        static let xl7_Space = SpacingPrimitives.seven
-        static let xl8_Space = SpacingPrimitives.eight
-        static let xl9_Space = SpacingPrimitives.nine
-        static let xl10_Space = SpacingPrimitives.ten
+        static let xs4Space = SpacingPrimitives.quarter
+        static let xs3Space = SpacingPrimitives.half
+        static let xs2Space = SpacingPrimitives.one
+        static let xsSpace = SpacingPrimitives.two
+        static let sSpace = SpacingPrimitives.three
+        static let mSpace = SpacingPrimitives.four
+        static let lSpace = SpacingPrimitives.five
+        static let xlSpace = SpacingPrimitives.six
+        static let xl7Space = SpacingPrimitives.seven
+        static let xl8Space = SpacingPrimitives.eight
+        static let xl9Space = SpacingPrimitives.nine
+        static let xl10Space = SpacingPrimitives.ten
     }
     
     struct Padding {

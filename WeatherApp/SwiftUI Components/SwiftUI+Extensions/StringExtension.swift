@@ -13,7 +13,7 @@ extension String {
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
-        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: self)
     }
     
@@ -41,14 +41,12 @@ extension String {
     
     func isPdf() -> Bool {
         let dataType = self.suffix(3)
-        print("** dataType \(dataType)")
-        if dataType == "pdf"{
+        if dataType == "pdf " {
             return true
         }
         return false
     }
 }
-
 
 extension String {
     func fromBase64() -> String? {
@@ -64,9 +62,7 @@ extension String {
     }
 }
 extension String {
-    
-   
-    func appendLocalizedString(_ appendString: String)-> String {
+    func appendLocalizedString(_ appendString: String) -> String {
         return ""
     }
 }

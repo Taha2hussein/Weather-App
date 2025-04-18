@@ -13,28 +13,27 @@ struct EmptyStateView: View {
     var text: String
     var buttonText: String
     var buttonIcon: Image?
-    var buttonAction: ()->() = {}
+    var buttonAction: () -> Void = {}
     var isButtonVisible: Bool = true
     var isPrimaryButtonStyle: Bool =  true
     
     var body: some View {
-        VStack{
+        VStack {
             if let systemIcon {
                 systemIcon
                     .resizable()
                     .frame(width: 66, height: 66)
-                    .padding(.vertical, .Spacing.xs_Space)
+                    .padding(.vertical, .Spacing.xsSpace)
                     .foregroundColor(.RERicon.invert)
             } else {
                 Image(icon ?? "")
-                //                    .resizable()
-                //                    .frame(width: 66, height: 76)
-                    .padding(.vertical, .Spacing.xs2_Space)
+             
+                    .padding(.vertical, .Spacing.xs2Space)
             }
             Text(text)
                 .font(.RERBody.regular)
                 .foregroundColor(.RERtext.dimmed)
-                .padding(.bottom, .Spacing.xs_Space)
+                .padding(.bottom, .Spacing.xsSpace)
             
             if isButtonVisible {
                 Button {
@@ -52,12 +51,12 @@ struct EmptyStateView: View {
                 .if(!isPrimaryButtonStyle, transform: { view in
                     view.buttonStyle(RERSecondaryButtonStyle())
                 })
-                .padding(.horizontal, .Spacing.m_Space)
+                .padding(.horizontal, .Spacing.mSpace)
             }
         }
-        .padding(.Spacing.l_Space)
+        .padding(.Spacing.lSpace)
         .background(Color.secondary)
-        .cornerRadius(CGFloat.RERRadius.l_Raduis)
+        .cornerRadius(CGFloat.RERRadius.lRaduis)
         
     }
 }

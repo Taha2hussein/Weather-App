@@ -14,7 +14,4 @@ protocol WeatherRepositoryUseCaseProtocol: Sendable {
     /// - Returns: An array of  WeatherResponseDTO  objects.
     /// - Throws: An error if the service request fails.
     func getWeather(search: String) async throws -> WeatherResponseDTO
-
-   
 }
-

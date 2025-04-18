@@ -32,7 +32,7 @@ extension Color {
     static let yellow = Color("yellowbackgroundColor")
     static let grays = Color("background-secondary-light")
     static let lightGray = Color("Background-gray")
-    struct RERborder{
+    struct RERborder {
         static let actionPrimary = Color("border-action-primary")
         static let actionSecondary = Color("border-action-secondary")
         static let alert = Color("border-alert")
@@ -50,7 +50,7 @@ extension Color {
         static let warning = Color("border-warning")
     }
     
-    struct RERicon{
+    struct RERicon {
         static let actionDisabled = Color("icon-action-disabled")
         static let actionPrimary = Color("icon-action-primary")
         static let actionSecondary = Color("icon-action-secondary")
@@ -67,7 +67,7 @@ extension Color {
         static let warning = Color("icon-warning")
     }
     
-    struct RERtext{
+    struct RERtext {
         static let actionDisabled = Color("text-action-disabled")
         static let actionPrimary = Color("text-action-primary")
         static let actionSecondary = Color("text-action-secondary")
@@ -140,12 +140,10 @@ func hexToUIColor (hex:String, alpha: CGFloat? = CGFloat(1.0)) -> UIColor {
     )
 }
 
-
 extension Color {
     init(hex: String) {
         var cleanHexCode = hex.trimmingCharacters(in: .whitespacesAndNewlines)
         cleanHexCode = cleanHexCode.replacingOccurrences(of: "#", with: "")
-        print(cleanHexCode)
         var rgb: UInt64 = 0
         
         Scanner(string: cleanHexCode).scanHexInt64(&rgb)

@@ -42,9 +42,6 @@ final class HomeDetailsViewModel: HomeDetailsViewModelProtocol {
             if let uiImage = UIImage(data: data) {
                 self.weatherIcon = Image(uiImage: uiImage)
             }
-        } catch {
-            print("Failed to load weather icon image: \(error)")
-        }
+        } catch {}
     }
 }
-

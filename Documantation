@@ -1,5 +1,5 @@
 
- ## Features
+           ## Features
 - Search and add cities to your watchlist.
 
 - View current weather information:
@@ -20,7 +20,7 @@
 
 - Responsive UI with loading states during network requests.
 
-## Architecture
+        ## Architecture
 - MVVM architecture for clear separation of concerns.
 
 - CoreData used for persistence with two related entities: City and WeatherInfo.
@@ -31,21 +31,21 @@
 
 - Uses a custom navigation and sheet routing system for better view control.
 
-## Frameworks & Tools
+        ## Frameworks & Tools
 - SwiftUI – UI layer and state management.
 
 
-## SwiftLint – Code quality and formatting.
+      ## SwiftLint – Code quality and formatting.
 
-
-## API Integration
+       ## API Integration
 Current weather:
 GET api.openweathermap.org/data/2.5/weather?q=<CITY_NAME>&appid=f5cb0b965ea1564c50c6f1b74534d823
 
 Weather icons:
 GET http://openweathermap.org/img/w/<ICON_ID>.png
 
-## CoreData Model
+       ## CoreData Model
+
 City:
 
 id: UUID
@@ -72,7 +72,8 @@ icon: String
 
 city: Relationship -> City
 
-## UI Highlights
+    ## UI Highlights
+
 Dark-themed UI with custom background image.
 
 Custom ListItem components.

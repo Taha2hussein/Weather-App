@@ -11,20 +11,19 @@ extension CGFloat {
     struct RERRadius {
         private struct Primitives {
             static let sharp: CGFloat = 0
-            static let s_Raduis: CGFloat = 4
-            static let m_Raduis: CGFloat = 6
-            static let l_Raduis: CGFloat = 8
-            static let xl_Raduis: CGFloat = 16
-            static let xl2_Raduis: CGFloat = 40
-            static let xl3_Raduis: CGFloat = 128
+            static let sRaduis: CGFloat = 4
+            static let mRaduis: CGFloat = 6
+            static let lRaduis: CGFloat = 8
+            static let xlRaduis: CGFloat = 16
+            static let xl2Raduis: CGFloat = 40
+            static let xl3Raduis: CGFloat = 128
         }
-        
         static let sharp = Primitives.sharp
-        static let s_Raduis = Primitives.s_Raduis
-        static let m_Raduis = Primitives.m_Raduis
-        static let l_Raduis = Primitives.l_Raduis
-        static let xl_Raduis = Primitives.xl_Raduis
-        static let xl2_Raduis = Primitives.xl2_Raduis
-        static let xl3_Raduis = Primitives.xl3_Raduis
+        static let sRaduis = Primitives.sRaduis
+        static let mRaduis = Primitives.mRaduis
+        static let lRaduis = Primitives.lRaduis
+        static let xlRaduis = Primitives.xlRaduis
+        static let xl2Raduis = Primitives.xl2Raduis
+        static let xl3Raduis = Primitives.xl3Raduis
     }
 }

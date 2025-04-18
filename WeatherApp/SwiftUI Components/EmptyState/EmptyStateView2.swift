@@ -14,20 +14,20 @@ struct EmptyStateView2: View {
     var text: String?
     var buttonText: String?
     var buttonIcon: Image?
-    var buttonAction: ()->() = {}
+    var buttonAction: () -> Void = {}
     var isButtonVisible: Bool = true
     var isPrimaryButtonStyle: Bool =  true
-    var spacing: CGFloat? = .Spacing.xs_Space
+    var spacing: CGFloat? = .Spacing.xsSpace
     
     var body: some View {
-        Card(verticalPadding: .Spacing.l_Space) {
-            VStack(spacing: spacing){
+        Card(verticalPadding: .Spacing.lSpace) {
+            VStack(spacing: spacing) {
                 if let icon {
                     icon
                         .renderingMode(.template)
                         .foregroundStyle(Color.RERicon.invert)
                 }
-                VStack(spacing: 0){
+                VStack(spacing: 0) {
                     if let title {
                         Text(title)
                             .font(.RERBody.bold)
@@ -56,9 +56,9 @@ struct EmptyStateView2: View {
                         view.buttonStyle(RERPrimaryButtonStyle())
                     })
                     .if(!isPrimaryButtonStyle, transform: { view in
-                        view.buttonStyle(RERSecondaryButtonStyle(width: 108, height: .Spacing.m_Space, font: .RERCaption1.bold))
+                        view.buttonStyle(RERSecondaryButtonStyle(width: 108, height: .Spacing.mSpace, font: .RERCaption1.bold))
                     })
-                    .padding(.horizontal, .Spacing.m_Space)
+                    .padding(.horizontal, .Spacing.mSpace)
                 }
             }
         }

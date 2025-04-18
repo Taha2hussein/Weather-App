@@ -12,7 +12,7 @@ struct Card<Content: View>: View {
     var titleFont: Font = .RERBody.bold
     var titleColor: Color = .RERtext.dimmed
     var verticalPadding: CGFloat = 0
-    var horizontalPadding: CGFloat = .Spacing.xs_Space
+    var horizontalPadding: CGFloat = .Spacing.xsSpace
     @ViewBuilder let content: Content
     
     

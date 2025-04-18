@@ -17,7 +17,7 @@ struct SectionTitle: ViewModifier {
     
     func body(content: Content) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack{
+            HStack {
                 Text(title)
                     .font(font)
                     .foregroundStyle(forgroundColor)
@@ -35,13 +35,13 @@ struct IconSectionTitle: ViewModifier {
     
     func body(content: Content) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            HStack{
+            HStack {
                 Image(icon)
                 Text(title)
                     .font(.RERBody.bold)
                     .foregroundStyle(Color.RERtext.dimmed)
             }
-            .padding(.bottom,.Spacing.xs2_Space)
+            .padding(.bottom,.Spacing.xs2Space)
             
             content
         }

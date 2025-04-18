@@ -17,12 +17,10 @@ extension View {
         }
     }
     
-    func sectionTitle(title: String, font: Font = .RERBody.bold, forgroundColor: Color = .RERtext.dimmed, bottomPadding: CGFloat = .Spacing.xs2_Space) -> some View {
+    func sectionTitle(title: String, font: Font = .RERBody.bold, forgroundColor: Color = .RERtext.dimmed, bottomPadding: CGFloat = .Spacing.xs2Space) -> some View {
         modifier(SectionTitle(title: title, font: font, forgroundColor: forgroundColor, bottomPadding: bottomPadding))
     }
-    
-   
-    func iconSectionTitle(title: String,icon : String) -> some View {
+    func iconSectionTitle(title: String, icon : String) -> some View {
         modifier(IconSectionTitle(title: title, icon: icon))
     }
     
@@ -49,7 +47,6 @@ extension View {
         modifier(GetHeightModifier(height: sheetHeight))
     }
     
-    
     func adaptsToKeyboard() -> some View {
         return modifier(AdaptsToKeyboard())
     }
@@ -71,8 +68,6 @@ extension View {
     }
 }
 
-
-
 struct EdgeBorder: Shape {
     var width: CGFloat
     var edges: [Edge]
@@ -88,5 +83,3 @@ struct EdgeBorder: Shape {
         }.reduce(into: Path()) { $0.addPath($1) }
     }
 }
-
-

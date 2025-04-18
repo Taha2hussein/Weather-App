@@ -8,10 +8,9 @@
 import UIKit
 import EventHorizon
 
-
 final class WeatherRepository: WeatherRepositoryProtocol {
     private let apiClient: any APIClientProtocol
-    private typealias apiEndpoint = APIEndpointExample
+    private typealias ApiEndpoint = APIEndpointExample
 
     init(
         apiClient: any APIClientProtocol = APIClient(
@@ -22,15 +21,12 @@ final class WeatherRepository: WeatherRepositoryProtocol {
     }
 
     func getWeather(search: String) async throws -> WeatherResponseDTO {
-        let fetchedWeather: WeatherResponseDTO = try await apiClient.request(apiEndpoint.getWeather(search: search))
+        let fetchedWeather: WeatherResponseDTO = try await apiClient.request(ApiEndpoint.getWeather(search: search))
         return fetchedWeather
     }
 
-
-    
     private func log(_ string: String) {
         #if DEBUG
-        print(string)
         #endif
     }
 }

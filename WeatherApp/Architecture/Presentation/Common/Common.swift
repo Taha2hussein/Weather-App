@@ -59,7 +59,7 @@ struct HeaderBar: View {
                 }
             }
         }
-        .frame(width: UIScreen.screenWidth,height: 72,alignment: .trailing)
+        .frame(width: UIScreen.screenWidth, height: 72, alignment: .trailing)
     }
 }
 
@@ -86,8 +86,6 @@ struct HistoricalHeaderBar: View {
             NavigationTitle(title: title)
                 .padding(.leading, 90)
                         
-       
-        }
-        .frame(width: UIScreen.screenWidth,height: 72,alignment: .leading)
+        }.frame(width: UIScreen.screenWidth, height: 72, alignment: .leading)
     }
 }

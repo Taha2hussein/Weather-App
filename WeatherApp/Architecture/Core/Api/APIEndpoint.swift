@@ -26,7 +26,7 @@ extension APIEndpointExample: APIEndpointProtocol {
     var apiVersion: String {
         switch self {
         case .getWeather:
-            APIVersion.v1.rawValue
+            APIVersion.version1.rawValue
         }
         
     }
@@ -70,7 +70,6 @@ extension APIEndpointExample: APIEndpointProtocol {
             ]
         }
     }
-    
     
     /// Request body data.
     var body: HTTPBody? {

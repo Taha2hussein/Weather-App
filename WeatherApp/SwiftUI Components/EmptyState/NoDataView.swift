@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct NoDataView: View {
-    var text : String = "noData"
-    var verticalPadding: CGFloat = .Spacing.xl_Space
+    var text: String = "noData"
+    var verticalPadding: CGFloat = .Spacing.xlSpace
     
     var body: some View {
         Card(verticalPadding: verticalPadding) {

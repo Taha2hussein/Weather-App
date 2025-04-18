@@ -16,7 +16,6 @@ var backendFormatter: DateFormatter {
 }
 
 extension Date {
-    
     var hijriCalendar: Calendar {
         var calendar = Calendar(identifier: .islamicUmmAlQura)
         calendar.locale = Locale(identifier: "ar_SA")
@@ -46,8 +45,8 @@ extension Date {
         } else {
             return ""
         }
-    }
-    
+  }
+
     var gregorianToHijri: String {
         var calendar = Calendar(identifier: .islamicUmmAlQura)
         calendar.locale = Locale(identifier: "ar_SA")
@@ -85,14 +84,14 @@ extension Date {
         
         if let date = dateFormatter.date(from: dateStr) {
             dateFormatter.timeZone = TimeZone.current
-//            dateFormatter.dateFormat = "yyyy-MM-dd"
+            //            dateFormatter.dateFormat = "yyyy-MM-dd"
             dateFormatter.dateFormat = includeTime ? "HH:mm yyyy-MM-dd" : "yyyy-MM-dd"
             
             return dateFormatter.string(from: date)
         }
         return nil
     }
-
+    
     
     func getDifference(from: String, to: String) -> String{
         let dateFormatter = DateFormatter()
@@ -112,46 +111,7 @@ extension Date {
         
     }
     
-   /* func getDifferenceByYearMonthDay(from: String, to: String) -> String{
-        print("####\(from) and \(to)")
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone.current
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        if let fromDate = dateFormatter.date(from: from){
-            if let toDate = dateFormatter.date(from: to){
-                let days = Calendar.current.dateComponents([.day,.month,.year], from: fromDate, to: toDate)
-                if let year = days.year{
-                    if year != 0 {
-                        return "\(year) \("year".localized())"
-                    }
-            
-                }
-                if let months = days.month{
-                    if months != 0 {
-                        if(months==2)
-                        {
-                            if languageManager.isAppArabic() {
-                                return "\("month_dual".localized())"
-                            }
-                            return "2 \("month_dual".localized())"
-                        }
-                        if(months>2)
-                        {
-                            return "\(months) \("month_plural".localized())"}
-                        return "\("month".localized())"
-                    }
-                }
-                
-                if let diff = days.day{
-                    return "\(abs(diff + 1) + 1) \("days".localized())"
-                }
-                
-                return "\(abs((days.day ?? 0) + 1)) \("days".localized())"
-            }
-        }
-        return ""
-        
-    } */
+    
     
     func getDifferenceByYearMonthDay(from: String, to: String) -> String {
         let dateFormatter = DateFormatter()
@@ -166,18 +126,16 @@ extension Date {
             if let year = components.year, year != 0 {
                 return "\(year) \("year")"
             }
-            
             if let months = components.month, months != 0 {
                 let absoluteMonths = abs(months)
                 if absoluteMonths == 1 {
-                   
+                    
                     return "1 \("month")"
                 } else {
                     let pluralKey = absoluteMonths > 1 ? "month_plural" : "month"
                     return "\(absoluteMonths) \(pluralKey)"
                 }
             }
-            
             if let days = components.day {
                 let absDays = abs(days) + 1
                 return "\(absDays) \("days")"
@@ -197,17 +155,15 @@ extension Date {
             }
         }
         return ""
-        
     }
-    
 }
 
 extension Date {
-    var millisecondsSince1970:Int64 {
+    var millisecondsSince1970: Int64 {
         return Int64((self.timeIntervalSince1970 * 1000.0).rounded())
     }
     
-    init(milliseconds:Int64) {
+    init(milliseconds: Int64) {
         self = Date(timeIntervalSince1970: TimeInterval(milliseconds) / 1000)
     }
 }
@@ -221,13 +177,12 @@ extension Date {
         return gregorianCalendar.component(component, from: self)
     }
 }
-enum DateFormat : String {
+enum DateFormat: String {
     case one = "yyyy-MM-dd'T'HH:mm:ss"
-    case two = "yyyy-MM-dd'T'HH:mm:ss.SSS" 
+    case two = "yyyy-MM-dd'T'HH:mm:ss.SSS"
     case three = "yyyy-MM-dd'T'HH:mm:ss.SSSZZ"
     case four = "yyyy-MM-dd HH:mm:ss +zzzz"
     case five = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
     case six = "dd-MM-yyyy"
-    case seven = "yyyy-MM-dd'T'HH:mm:ss.SS" 
+    case seven = "yyyy-MM-dd'T'HH:mm:ss.SS"
 }
-                

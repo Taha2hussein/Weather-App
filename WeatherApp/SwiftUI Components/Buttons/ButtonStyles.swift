@@ -10,12 +10,12 @@ import SwiftUI
 
 struct RERPrimaryButtonStyle: ButtonStyle {
     var width: CGFloat = .infinity
-    var height: CGFloat = .Spacing.m_Space
+    var height: CGFloat = .Spacing.mSpace
     var font: Font = .RERBody.bold
     var color: Color = Color.actionPrimary
     var selectedColor: Color = Color.primary // Color when the button is selected
     var unselectedColor: Color = Color.secondary // Color when the button is not selected
-    var radius: CGFloat = .RERRadius.xl2_Raduis
+    var radius: CGFloat = .RERRadius.xl2Raduis
     var isSelected: Bool = false 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -28,16 +28,14 @@ struct RERPrimaryButtonStyle: ButtonStyle {
          
     }
 }
-
-
 //
 struct RERSecondaryButtonStyle: ButtonStyle {
     var width: CGFloat = .infinity
-    var height: CGFloat = .Spacing.xl_Space
+    var height: CGFloat = .Spacing.xlSpace
     var font: Font = .RERBody.meduim
     var color: Color = .RERtext.main
     var borderColor: Color = .RERborder.actionPrimary
-    var radius: CGFloat = .RERRadius.m_Raduis
+    var radius: CGFloat = .RERRadius.mRaduis
     var backgroundColor: Color = .clear
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
@@ -80,13 +78,13 @@ struct RERAttachmentButtonStyle: ButtonStyle {
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .padding(.vertical, .Spacing.xs3_Space)
-            .padding(.horizontal, .Spacing.xs_Space)
+            .padding(.vertical, .Spacing.xs3Space)
+            .padding(.horizontal, .Spacing.xsSpace)
             .frame(maxWidth: width, minHeight: height, maxHeight: height)
             .background(Color.primary)
             .foregroundColor(textColor)
             .font(font)
-            .cornerRadius(.RERRadius.m_Raduis)
+            .cornerRadius(.RERRadius.mRaduis)
 
     }
 }
@@ -104,14 +102,14 @@ struct RERPickerButtonStyle: ButtonStyle {
             .frame(maxWidth: width/*, minHeight: height, maxHeight: height*/)
             .frame(height: height)
             .foregroundColor(color)
-            .padding(.horizontal, .Spacing.xs_Space)
+            .padding(.horizontal, .Spacing.xsSpace)
 //            .padding(.vertical, .Spacing.xs_3)
             .background(isDisabled ? Color.disabled : Color.primary)
             
             .font(font)
-            .cornerRadius(.RERRadius.m_Raduis)
+            .cornerRadius(.RERRadius.mRaduis)
             .overlay(
-                RoundedRectangle(cornerRadius: .RERRadius.m_Raduis)
+                RoundedRectangle(cornerRadius: .RERRadius.mRaduis)
                     .stroke(borderColor, lineWidth: 0.5)
             )
     }
@@ -125,18 +123,17 @@ struct RERMenuButtonStyle: MenuStyle {
     var borderColor: Color = .clear
     var isDisabled: Bool = false
     
-    
     func makeBody(configuration: Configuration) -> some View {
         Menu(configuration)
             .frame(maxWidth: width, minHeight: height, maxHeight: height)
             .foregroundColor(color)
-            .padding(.horizontal, .Spacing.xs_Space)
-            .padding(.vertical, .Spacing.xs3_Space)
+            .padding(.horizontal, .Spacing.xsSpace)
+            .padding(.vertical, .Spacing.xs3Space)
             .background(isDisabled ? Color.disabled : Color.primary)
             .font(font)
-            .cornerRadius(.RERRadius.m_Raduis)
+            .cornerRadius(.RERRadius.mRaduis)
             .overlay(
-                RoundedRectangle(cornerRadius: .RERRadius.m_Raduis)
+                RoundedRectangle(cornerRadius: .RERRadius.mRaduis)
                     .stroke(borderColor, lineWidth: 0.5)
             )
     }

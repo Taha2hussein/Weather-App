@@ -32,7 +32,7 @@ struct HomeView: View {
                         }
                         .onDelete(perform: viewModel.deleteCity)
                     }
-                    .scrollContentBackground(.hidden)
+//                    .scrollContentBackground(.hidden)
                     .background(Color.clear)
                     .listStyle(PlainListStyle())
                 }
@@ -79,4 +79,3 @@ struct HomeView: View {
         
     }
 }
-

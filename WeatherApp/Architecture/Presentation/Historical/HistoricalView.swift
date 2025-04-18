@@ -28,7 +28,7 @@ struct HistoricalView: View {
                             cityRow(for: info.wrappedValue)
                         }
                     }
-                    .scrollContentBackground(.hidden)
+//                    .scrollContentBackground(.hidden)
                     .background(Color.clear)
                     .listStyle(PlainListStyle())
                 }
@@ -68,4 +68,3 @@ struct HistoricalView: View {
         router.presentSheet(view: AnyView(homeDetailsBody))
     }
 }
-

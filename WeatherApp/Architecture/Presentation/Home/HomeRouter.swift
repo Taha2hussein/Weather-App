@@ -18,7 +18,7 @@ protocol AnyRouter: ObservableObject {
 }
 
 // MARK: - HomeRouter
-class HomeRouter: NavigationRouter ,AnyRouter {
+class HomeRouter: NavigationRouter, AnyRouter {
     typealias RouteType = HomeRouterEnum
 
     @Published var currentRoute: HomeRouterEnum?

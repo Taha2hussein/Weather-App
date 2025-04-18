@@ -36,7 +36,7 @@ struct CountrySearchView: View {
                     )
                 }
             }
-            .scrollContentBackground(.hidden)
+//            .scrollContentBackground(.hidden)
             .background(Color.clear)
             .listStyle(PlainListStyle())
         }

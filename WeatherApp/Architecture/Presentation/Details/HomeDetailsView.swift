@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftUI
 
 struct HomeDetailsView<Router: AnyRouter>: View {
     @StateObject var viewModel: HomeDetailsViewModel

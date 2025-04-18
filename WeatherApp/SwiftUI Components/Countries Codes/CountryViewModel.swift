@@ -19,9 +19,7 @@ class CountryViewModel: ObservableObject {
                 let data = try Data(contentsOf: url)
                 let decodedData = try JSONDecoder().decode([Country].self, from: data)
                 countries = decodedData
-            } catch {
-                print("Error loading countries: \(error)")
-            }
+            } catch {}
         }
     }
 }
