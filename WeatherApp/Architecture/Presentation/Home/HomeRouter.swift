@@ -64,4 +64,8 @@ class HomeRouter: NavigationRouter ,AnyRouter {
             return AnyView(HistoricalView(viewModel: HistoricalViewModel(weatherResponse: ciy), router: HistoricalRouter()))
         }
     }
+    
+    var sheetView: AnyView {
+        sheetContent ?? AnyView(EmptyView())  // Ensure non-optional return
+    }
 }

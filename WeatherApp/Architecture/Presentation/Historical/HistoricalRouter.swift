@@ -9,50 +9,45 @@ import Foundation
 import SwiftUI
 import Combine
 
-enum HistoricalRouterEnum: Hashable {
-    case showDetails(weather: WeatherResponseDTO)
-}
+enum HistoricalRouterEnum: Hashable { }
 
 // MARK: - HomeRouter
-class HistoricalRouter: NavigationRouter,AnyRouter {
+class HistoricalRouter: NavigationRouter, AnyRouter {
+    
     typealias RouteType = HistoricalRouterEnum
     @Published var currentRoute: HistoricalRouterEnum?
     @Published var showSheet: Bool = false
     @Published var sheetContent: AnyView?
     @Published var shouldDismissSignup: Bool = false
-
+    
     func navigate(to destination: HistoricalRouterEnum) {
-        DispatchQueue.main.async {
-            self.currentRoute = destination
-        }
+        self.currentRoute = destination
     }
-
+    
     func goBack() {
-        DispatchQueue.main.async {
-                self.currentRoute = nil
-            
-        }
+        self.currentRoute = nil
     }
-
+    
     func presentSheet(view: AnyView) {
         sheetContent = view
         showSheet = true
     }
-
+    
     func dismissSheet() {
         sheetContent = nil
         showSheet = false
     }
-
+    
     func resetNavigation() {
         currentRoute = nil
     }
-
+    
     var destinationView: AnyView? {
         guard let route = currentRoute else { return nil }
-        switch route {
-        case .showDetails(let weather):
-            return AnyView(EmptyView())
-        }
+        switch route {}
+    }
+    
+    var sheetView: AnyView {
+        sheetContent ?? AnyView(EmptyView())  // Ensure non-optional return
     }
 }

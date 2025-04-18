@@ -20,7 +20,7 @@ final class HistoricalViewModel: ObservableObject {
         
         if let weatherInfoSet = weatherResponse.weatherInfo as? Set<WeatherInfo> {
             self.weatherHistory = weatherInfoSet
-                .sorted { ($0.timestamp ?? Date()) > ($1.timestamp ?? Date()) } // optional: sort by most recent
+                .sorted { ($0.timestamp ?? Date()) > ($1.timestamp ?? Date()) }
         }
     }
 }

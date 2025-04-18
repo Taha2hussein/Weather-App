@@ -58,12 +58,11 @@ struct HomeDetailsView<Router: AnyRouter>: View {
                         Spacer()
                         
                         VStack(alignment: .trailing, spacing: 16) {
-                            if let firstWeatherInfo = viewModel.weatherInfoSet {
-                                Text(firstWeatherInfo.weatherDesc ?? "")
-                                Text("\(Int(firstWeatherInfo.temperature))° C")
-                                Text("\(Int(firstWeatherInfo.humidity))%")
-                                Text("\(Int(firstWeatherInfo.windSpeed)) km/h")
-                            }
+                            let firstWeatherInfo = viewModel.weatherInfoSet
+                            Text(firstWeatherInfo.weatherDesc ?? "")
+                            Text("\(Int(firstWeatherInfo.temperature))° C")
+                            Text("\(Int(firstWeatherInfo.humidity))%")
+                            Text("\(Int(firstWeatherInfo.windSpeed)) km/h")
                         }
                         .foregroundColor(.red)
                         .font(.headline)

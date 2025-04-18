@@ -63,11 +63,14 @@ struct HomeView: View {
             item: city,
             titleProvider: { $0.name ?? "" },
             onTap: {
-                let homeDetailsBody = HomeDetailsView(
-                    viewModel: HomeDetailsViewModel(weatherResponse: city),
-                    router: router
-                )
-                router.presentSheet(view: AnyView(homeDetailsBody))
+                guard let weatherInfoSet = city.weatherInfo as? Set<WeatherInfo>  else { return }
+                    
+                    let homeDetailsBody = HomeDetailsView(
+                        viewModel: HomeDetailsViewModel(weatherResponse: city, weatherInfoSet: weatherInfoSet.first!),
+                        router: router
+                    )
+                    router.presentSheet(view: AnyView(homeDetailsBody))
+                
             },
             onTrailingButtonTap: {
                 router.navigate(to: .showHistorical(ciy: city))

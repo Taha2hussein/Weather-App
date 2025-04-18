@@ -19,7 +19,6 @@ struct HistoricalView: View {
         NavigationWrapper(router: router) {
             ZStack {
                 BackgroundImage()
-                
                 VStack(spacing: 16) {
                     HistoricalHeaderBar(title: viewModel.weatherResponse.name ?? "") {
                         router.goBack()
@@ -53,15 +52,20 @@ struct HistoricalView: View {
                 return "\(date)\n\(desc), \(temp)°C"
             },
             onTap: {
-                    let homeDetailsBody = HomeDetailsView(
-                        viewModel: HomeDetailsViewModel(weatherResponse: viewModel.weatherResponse),
-                        router: router
-                    )
-                    router.presentSheet(view: AnyView(homeDetailsBody))
-                
+                navigateToDetails(for: weatherInfo)
             },
-            onTrailingButtonTap: {}
+            onTrailingButtonTap: {
+                navigateToDetails(for: weatherInfo)
+            }
         )
+    }
+    
+    private func navigateToDetails(for weatherInfo: WeatherInfo) {
+        let homeDetailsBody = HomeDetailsView(
+            viewModel: HomeDetailsViewModel(weatherResponse: viewModel.weatherResponse, weatherInfoSet: weatherInfo),
+            router: router
+        )
+        router.presentSheet(view: AnyView(homeDetailsBody))
     }
 }
 
